@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:macro name="so101_ros2_control"
+               params="name arm_type port config_path speed acc torque_limit">
+    <ros2_control name="${name}" type="system">
+      <hardware>
+        <plugin>so101_hardware/so101_hardware_interface</plugin>
+        <param name="arm_type">${arm_type}</param>
+        <param name="port">${port}</param>
+        <param name="config_path">${config_path}</param>
+        <param name="speed">${speed}</param>
+        <param name="acc">${acc}</param>
+        <param name="torque_limit">${torque_limit}</param>
+      </hardware>
+
+      <joint name="Rotation">
+        <command_interface name="position"/>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+        <state_interface name="effort"/>
+      </joint>
+
+      <joint name="Pitch">
+        <command_interface name="position"/>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+        <state_interface name="effort"/>
+      </joint>
+
+      <joint name="Elbow">
+        <command_interface name="position"/>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+        <state_interface name="effort"/>
+      </joint>
+
+      <joint name="Wrist_Pitch">
+        <command_interface name="position"/>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+        <state_interface name="effort"/>
+      </joint>
+
+      <joint name="Wrist_Roll">
+        <command_interface name="position"/>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+        <state_interface name="effort"/>
+      </joint>
+
+      <joint name="Jaw">
+        <command_interface name="position"/>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+        <state_interface name="effort"/>
+      </joint>
+    </ros2_control>
+  </xacro:macro>
+
+</robot>

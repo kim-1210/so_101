@@ -1,0 +1,44 @@
+Panels:
+  - Class: rviz_common/Displays
+    Name: Displays
+Visualization Manager:
+  Class: ""
+  Displays:
+    - Class: rviz_default_plugins/Grid
+      Enabled: true
+      Name: Grid
+    - Class: moveit_rviz_plugin/MotionPlanning
+      Enabled: true
+      Name: MotionPlanning
+      Planned Path:
+        Loop Animation: true
+        Show Robot Visual: true
+        Show Trail: false
+        Trajectory Topic: display_planned_path
+      Planning Scene Topic: monitored_planning_scene
+      Planning Request:
+        Planning Group: arm
+      Scene Geometry:
+        Scene Display Time: 0.2
+        Show Scene Geometry: true
+  Enabled: true
+  Global Options:
+    Fixed Frame: world
+  Tools:
+    - Class: rviz_default_plugins/Interact
+    - Class: rviz_default_plugins/MoveCamera
+  Value: true
+  Views:
+    Current:
+      Class: rviz_default_plugins/Orbit
+      Distance: 0.9
+      Focal Point:
+        X: 0.0
+        Y: -0.12
+        Z: 0.16
+      Name: Current View
+      Pitch: 0.45
+      Yaw: 2.35
+Window Geometry:
+  Height: 900
+  Width: 1400
